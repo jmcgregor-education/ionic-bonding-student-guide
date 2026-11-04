@@ -43,7 +43,7 @@
   p { margin: 0 0 14px; max-width: 68ch; }
   a { color: var(--sapphire); }
   :focus-visible { outline: 3px solid var(--sapphire); outline-offset: 2px; border-radius: 3px; }
-
+ 
   /* Hero */
   .hero { background: var(--ink); color: #fff; padding: 40px 0 36px; }
   .hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
@@ -61,16 +61,16 @@
   .gem .lt { fill: #fff; opacity: .38; }
   .gem .dk { fill: #000; opacity: .28; }
   @media (max-width: 640px) { .hero .wrap { grid-template-columns: 1fr; } .gems { justify-content: flex-start; } }
-
+ 
   /* Jump nav */
   nav.jump { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
   nav.jump ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; overflow-x: auto; }
   nav.jump a { display: block; padding: 12px 12px; font-family: var(--ui); font-weight: 600; font-size: .92rem; color: var(--ink); text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; }
   nav.jump a:hover { border-bottom-color: var(--sapphire); }
-
+ 
   section { padding: 40px 0 8px; }
   section + section { border-top: 1px solid var(--line); margin-top: 24px; }
-
+ 
   /* Callouts */
   .callout { border-left: 5px solid var(--sapphire); background: var(--sapphire-tint); padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; }
   .callout p:last-child { margin-bottom: 0; }
@@ -79,33 +79,33 @@
   .callout.warn .tag { color: var(--warn); }
   .callout.think { border-left-color: var(--ruby); background: var(--ruby-tint); }
   .callout.think .tag { color: var(--ruby); }
-
+ 
   /* Can-do list */
   .cando { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
   .cando li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
   .cando .code { font-family: var(--ui); font-weight: 700; background: var(--sapphire); color: #fff; border-radius: 6px; padding: 2px 9px; font-size: .9rem; margin-top: 2px; }
-
+ 
   /* Vocab */
   dl.vocab { margin: 0; display: grid; grid-template-columns: minmax(130px, 200px) 1fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--paper); }
   dl.vocab dt, dl.vocab dd { margin: 0; padding: 10px 14px; border-top: 1px solid var(--line); }
   dl.vocab dt { font-family: var(--ui); font-weight: 700; color: var(--sapphire); background: #f2f5fc; }
   dl.vocab dt:first-of-type, dl.vocab dt:first-of-type + dd { border-top: 0; }
   @media (max-width: 560px) { dl.vocab { grid-template-columns: 1fr; } dl.vocab dd { border-top: 0; padding-top: 2px; } }
-
+ 
   /* Tables */
   .tablewrap { overflow-x: auto; margin: 14px 0 18px; }
   table { border-collapse: collapse; width: 100%; background: var(--paper); font-size: 1rem; }
   th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
   th { background: var(--ink); color: #fff; font-family: var(--ui); font-weight: 600; }
   td:first-child { font-family: var(--ui); font-weight: 700; }
-
+ 
   /* Write boxes */
   .prompt-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
   .prompt { background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--ruby); border-radius: 8px; padding: 14px 16px; }
   .prompt.b { border-top-color: var(--sapphire); }
   .prompt h3 { margin-top: 0; }
   @media (max-width: 640px) { .prompt-pair { grid-template-columns: 1fr; } }
-
+ 
   /* Tools (calculator, stepper, quiz) */
   .tool { background: var(--paper); border: 2px solid var(--ink); border-radius: 10px; padding: 18px; margin: 22px 0; }
   .tool > h3 { margin-top: 0; }
@@ -120,7 +120,7 @@
   button.ghost { background: #fff; color: var(--ink); }
   button.ghost:hover { background: var(--sapphire-tint); }
   button[disabled] { opacity: .4; cursor: not-allowed; }
-
+ 
   .picker { display: flex; gap: 14px; flex-wrap: wrap; align-items: end; }
   .picker .vs { font-family: var(--ui); font-weight: 700; padding-bottom: 10px; }
   .scale { position: relative; margin: 26px 0 6px; }
@@ -138,7 +138,7 @@
   .scale .names span:nth-child(3) { width: 51.43%; }
   .result { margin-top: 12px; padding: 12px 16px; border-radius: 8px; background: var(--sapphire-tint); font-family: var(--ui); }
   .result .big { font-size: 1.25rem; font-weight: 700; }
-
+ 
   .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
   .tabs button { background: #fff; color: var(--ink); }
   .tabs button[aria-pressed="true"] { background: var(--ink); color: #fff; }
@@ -151,14 +151,14 @@
   .stepnav { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .stepnav .count { font-family: var(--ui); font-weight: 600; color: var(--ink-soft); }
   .formula { font-family: var(--ui); font-weight: 700; font-size: 1.3rem; width: 100%; text-align: center; margin-top: 8px; }
-
+ 
   /* Formula builder */
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 4px; min-height: 44px; }
   .chip { font-family: var(--ui); font-weight: 700; font-size: 1.15rem; padding: 6px 14px; border-radius: 999px; border: 2px solid; background: #fff; }
   .chip.cat { color: var(--sapphire); border-color: var(--sapphire); background: var(--sapphire-tint); }
   .chip.an { color: var(--ruby); border-color: var(--ruby); background: var(--ruby-tint); }
   .chip sup { font-size: .7em; }
-
+ 
   /* Optional videos */
   details.optvid { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); margin: 22px 0; }
   details.optvid > summary { cursor: pointer; padding: 12px 16px; font-family: var(--ui); font-weight: 700; list-style: none; display: flex; gap: 10px; align-items: center; }
@@ -176,7 +176,7 @@
   .vid .actions a { font-weight: 600; }
   .frame { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
   .frame iframe, .frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-
+ 
   /* Quiz */
   .q { border-top: 1px solid var(--line); padding: 18px 0; }
   .q:first-of-type { border-top: 0; padding-top: 4px; }
@@ -188,15 +188,15 @@
   .fb.info { background: var(--sapphire-tint); color: var(--ink); }
   .fb ul { margin: 6px 0 0; padding-left: 20px; }
   .score { font-family: var(--ui); font-weight: 700; margin-top: 14px; }
-
-
+ 
+ 
   footer { padding: 30px 0 50px; color: var(--ink-soft); font-size: .9rem; font-family: var(--ui); }
   sub, sup { line-height: 0; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .scale .marker { transition: none; } }
 </style>
 </head>
 <body>
-
+ 
 <header class="hero">
   <div class="wrap">
     <div>
@@ -216,7 +216,7 @@
     </div>
   </div>
 </header>
-
+ 
 <nav class="jump" aria-label="Sections">
   <div class="wrap">
     <ul>
@@ -233,9 +233,9 @@
     </ul>
   </div>
 </nav>
-
+ 
 <main class="wrap">
-
+ 
 <section id="goals">
   <h2>What you’ll be able to do</h2>
   <ul class="cando">
@@ -244,7 +244,7 @@
     <li><span class="code">C.7B</span><span>Name and write the formulas for ionic compounds using IUPAC nomenclature rules, including compounds with polyatomic ions and metals that have more than one charge.</span></li>
     <li><span class="code">C.7D</span><span>Analyze the properties of ionic substances by explaining them with the forces that hold the particles together.</span></li>
   </ul>
-
+ 
   <h3>Atom and ion basics</h3>
   <div class="tablewrap">
     <table>
@@ -259,11 +259,11 @@
   <p>A neutral atom has equal numbers of protons and electrons. An <b>ion</b> has the same protons but a different number of electrons, so it carries a charge. Ions form when electrons move. The nucleus doesn’t change.</p>
   <div class="vidgroup" data-group="teacher"></div>
 </section>
-
+ 
 <section id="phenomenon">
   <h2>Two phenomena to explain</h2>
   <p>You’ll keep coming back to these questions all unit. Make your first explanation now, using only what you already know. It’s okay to be wrong. You’ll revise it with evidence at the end.</p>
-
+ 
   <div class="prompt-pair">
     <div class="prompt">
       <h3>Hard water</h3>
@@ -276,7 +276,7 @@
       <p><b>Do:</b> Write what you notice and what you wonder about how the same compound can look so different.</p>
     </div>
   </div>
-
+ 
   <div class="callout think">
     <span class="tag">Think about it: salty bonds</span>
     <p>Table salt (sodium chloride) is on your fries, in seawater, and inside your body. It’s one of the most common compounds on Earth. Why is it so common? And looking at the periodic table, why might sodium bond with chlorine? Jot down your ideas. You’ll check them in a few minutes.</p>
@@ -285,13 +285,13 @@
     <span class="tag">Think about it: same elements, different compounds</span>
     <p>Your teacher will show you two compounds made of the same elements in different proportions. What looks the same? What looks different? Why might it matter to know exactly which one you have?</p>
   </div>
-
+ 
   <div class="callout think">
     <span class="tag">Think about it: why formulas matter</span>
     <p>There&rsquo;s an old chemistry rhyme about a kid who drinks something he thinks is H<sub>2</sub>O but is actually H<sub>2</sub>SO<sub>4</sub> (sulfuric acid). If a beaker were labeled only with a formula, what would you need to know to read it safely? Later in this guide you&rsquo;ll learn to read, write, and name formulas for ionic compounds.</p>
   </div>
 </section>
-
+ 
 <section id="vocab">
   <h2>Core vocabulary</h2>
   <dl class="vocab">
@@ -326,23 +326,23 @@
     <p>Cations have a <i>cat</i> in them, and cats have paws, so cations are <b>PAWS-itive</b>. There’s also a plus sign hiding in the middle of ca<b>+</b>ion. <b>Anion</b> = <b>A N</b>egative <b>ION</b>.</p>
   </div>
 </section>
-
+ 
 <section id="bonding">
   <h2>Why atoms bond</h2>
   <p>Most elements don’t stay on their own. They bond with other elements to lower their energy and reach a more stable arrangement of electrons.</p>
   <p>A <b>compound</b> is two or more elements chemically bonded, with no overall charge. The bonds are made with valence electrons. Compounds are sorted into two main types, <b>ionic</b> or <b>covalent</b>, based on the kind of bond the elements make. To decide which type you have, look at what kinds of elements are involved and compare their electronegativities.</p>
-
+ 
   <h3>How an ionic bond forms</h3>
   <p>The octet rule says atoms give away or take electrons until their outer shell holds eight. (Hydrogen is the exception. It aims for two electrons in its first shell, or none at all if it loses its electron.)</p>
   <p><b>Metals</b> have low ionization energy, so they lose electrons easily and become <b>cations</b>. <b>Nonmetals</b> have high electronegativity, so they pull electrons in and become <b>anions</b>. When a nonmetal’s strong pull meets a metal’s weak grip, one or more electrons transfer. The resulting oppositely charged ions attract each other by <b>electrostatic attraction</b> and lock into a regular, repeating crystal pattern.</p>
-
+ 
   <div class="callout warn">
     <span class="tag">Watch out</span>
     <p>The ionic bond isn’t the electron jumping from one atom to another. The transfer creates the ions. The <i>bond</i> is the electrostatic attraction between those ions.</p>
   </div>
   <div class="vidgroup" data-group="bonding"></div>
 </section>
-
+ 
 <section id="predict">
   <h2>Predict the bond type with electronegativity</h2>
   <p>Subtract the two electronegativity values (bigger minus smaller). The size of the difference tells you what kind of bond to expect.</p>
@@ -357,12 +357,12 @@
     </table>
   </div>
   <p>Example: sodium is 0.93 and chlorine is 3.16. The difference is 3.16 − 0.93 = 2.23. That’s greater than 1.7, so the bond is ionic. Sodium transfers an electron to chlorine, making a cation and an anion held together by electrostatic attraction.</p>
-
+ 
   <div class="callout warn">
     <span class="tag">Watch out</span>
     <p>Bonds aren’t simply “ionic” or “not ionic.” Bond character is a continuum, and no bond is ever 100% ionic. The bigger the electronegativity difference, the more ionic the bond is. Also, books draw the cutoff lines in slightly different places, so use the values your teacher gives you.</p>
   </div>
-
+ 
   <div class="tool" id="enTool">
     <h3>Try it: electronegativity explorer</h3>
     <div class="picker">
@@ -380,7 +380,7 @@
   </div>
   <div class="vidgroup" data-group="predict"></div>
 </section>
-
+ 
 <section id="lewis">
   <h2>Draw ionic compounds with Lewis structures</h2>
   <p>A Lewis structure shows why a formula is written the way it is. You draw the electron transfer first, then show the finished ions.</p>
@@ -390,7 +390,7 @@
     <li><b>Show the transfer.</b> Draw arrows from the metal to the nonmetal. Add more atoms until the metal has lost <i>all</i> its valence electrons and every nonmetal has a full octet.</li>
     <li><b>Finalize.</b> Rewrite each ion in brackets with its charge. Use subscripts when you need more than one ion. Check that the charges add up to zero.</li>
   </ol>
-
+ 
   <div class="tool" id="lewisTool">
     <h3>Walk through it</h3>
     <div class="tabs" id="lewisTabs" role="group" aria-label="Choose a compound"></div>
@@ -406,7 +406,7 @@
     </div>
   </div>
 </section>
-
+ 
 <section id="properties">
   <h2>Properties of ionic compounds</h2>
   <p>The type of bond in a substance affects how it behaves. Ionic compounds share a set of properties, and every one of them traces back to ions held in place by electrostatic attraction.</p>
@@ -422,7 +422,7 @@
       </tbody>
     </table>
   </div>
-
+ 
   <h3>What makes an ionic bond stronger?</h3>
   <p>The attraction is stronger when the <b>charges on the ions are larger</b> and when the <b>ions are smaller</b>, because small ions can get physically closer together.</p>
   <div class="callout warn">
@@ -430,17 +430,17 @@
     <p>Charge isn’t the only factor. Ion size and electronegativity difference matter too.</p>
   </div>
 </section>
-
+ 
 <section id="formulas">
   <h2>Writing ionic formulas</h2>
   <p>A <b>chemical formula</b> uses element symbols to show which elements are in a compound and <b>subscripts</b> to show how many of each. A symbol with no subscript means one.</p>
   <p>Ionic compounds don&rsquo;t form separate molecules. Huge numbers of ions pack together into a crystal. So an ionic formula shows a <b>formula unit</b>, the lowest whole-number ratio of ions. For sodium chloride that&rsquo;s one sodium ion for every one chloride ion, so the formula is NaCl. The positive and negative charges balance, so there&rsquo;s no overall charge.</p>
-
+ 
   <div class="callout warn">
     <span class="tag">Watch out: charge is not the subscript</span>
     <p>Ionic charges are written as <b>superscripts</b> (Mg<sup>2+</sup>) and show how many electrons an atom gained or lost. Subscripts show how many of each ion are in the formula unit (MgCl<sub>2</sub>). Don&rsquo;t mix them up. Your Lewis structures can help you find the charges and how many of each ion you need.</p>
   </div>
-
+ 
   <h3>Four guidelines for ionic formulas</h3>
   <ol>
     <li>The net charge must be zero.</li>
@@ -448,7 +448,7 @@
     <li>The formula of a polyatomic ion is written as a unit.</li>
     <li>If more than one polyatomic ion is needed, put it in parentheses with a subscript after.</li>
   </ol>
-
+ 
   <h3>Balance the charges</h3>
   <p>Take Mg<sup>2+</sup> and Cl<sup>&minus;</sup>. One magnesium ion has a charge of +2. Each chloride ion is &minus;1, so it takes two of them to cancel: <b>MgCl<sub>2</sub></b>.</p>
   <p>The <b>cross-and-drop</b> shortcut gets the same result:</p>
@@ -464,11 +464,11 @@
   </div>
   <div class="vidgroup" data-group="formulas"></div>
 </section>
-
+ 
 <section id="naming">
   <h2>Naming ionic compounds</h2>
   <p>Naming follows IUPAC rules, a standard system that keeps scientists everywhere from getting confused. In every ionic name and formula, the cation comes first and the anion comes second.</p>
-
+ 
   <h3>Binary ionic compounds</h3>
   <p>Binary means two elements: one metal ion and one nonmetal ion. When the metal has a fixed charge, say the metal&rsquo;s name, then the nonmetal&rsquo;s name with the ending changed to <b>-ide</b>. MgCl<sub>2</sub> is magnesium chloride. Mg<sub>3</sub>N<sub>2</sub> is magnesium nitride.</p>
   <div class="tablewrap">
@@ -485,7 +485,7 @@
     <span class="tag">Remember</span>
     <p>Ionic names don&rsquo;t use number prefixes. MgCl<sub>2</sub> is &ldquo;magnesium chloride,&rdquo; not &ldquo;magnesium dichloride.&rdquo; The ratio comes from the charges. Say the anion names out loud while you look at the periodic table. It helps you remember the spelling and sound of the &ldquo;-ide&rdquo; endings.</p>
   </div>
-
+ 
   <h3>Compounds with polyatomic ions</h3>
   <p>A <b>polyatomic ion</b> is a group of covalently bonded atoms that acts as one unit with an overall charge. Naming is the same as for binary compounds: cation name, then anion name. Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> is calcium phosphate. Keep the polyatomic ion&rsquo;s name as it is. Don&rsquo;t change its ending to &ldquo;-ide.&rdquo;</p>
   <div class="tablewrap">
@@ -508,7 +508,7 @@
     <span class="tag">Watch out</span>
     <p>Not every polyatomic ion needs parentheses. Use them only when you need <b>more than one</b> of that ion. NaOH has none. Ca(OH)<sub>2</sub> needs them.</p>
   </div>
-
+ 
   <h3>Metals that can have more than one charge</h3>
   <p>Some metals form more than one kind of ion. These are <b>multivalent metals</b>. Most transition metals are multivalent, and so are tin and lead. These metals need an extra step in the name: write the metal&rsquo;s name, then its charge as a <b>Roman numeral</b> in parentheses, then the anion.</p>
   <div class="tablewrap">
@@ -534,7 +534,7 @@
     <span class="tag">Watch out</span>
     <p>The subscript on the anion isn&rsquo;t always the metal&rsquo;s charge. In MnO<sub>2</sub>, the two O<sup>2&minus;</sup> ions total 4&minus;, so one Mn is <b>4+</b>, not 2+. Ionic formulas are always written in the smallest ratio of ions.</p>
   </div>
-
+ 
   <h3>Naming, step by step</h3>
   <ol>
     <li>Find the cation. Is it a metal, or polyatomic like NH<sub>4</sub><sup>+</sup>?</li>
@@ -542,7 +542,7 @@
     <li>Find the anion. A single nonmetal ion ends in <b>-ide</b>. A polyatomic ion keeps its name.</li>
     <li>Write the cation name (with the Roman numeral if needed), then the anion name.</li>
   </ol>
-
+ 
   <div class="tool" id="builder">
     <h3>Try it: ionic formula builder</h3>
     <div class="picker">
@@ -555,22 +555,22 @@
   </div>
   <div class="vidgroup" data-group="naming"></div>
 </section>
-
+ 
 <section id="check">
   <h2>Check yourself</h2>
   <p>Give every question a real try before you check. Feedback appears after you answer. Use your Periodic Table of Electronegativities and Polyatomic Chart if you need them.</p>
   <div class="tool" id="quiz"></div>
 </section>
-
-
+ 
+ 
 </main>
-
+ 
 <footer><div class="wrap">Based on Summit K12 Lesson Guides 4.1 and 4.2, rewritten for students.</div></footer>
-
+ 
 <script>
 (function () {
   "use strict";
-
+ 
   /* ---------- Optional videos ----------
      To add your own (e.g., a NotebookLM video), put it in the "teacher" group below:
        { group: "teacher", title: "Your title", by: "Mr. McGregor", note: "What it covers.", id: "YOUTUBE_ID" }
@@ -619,7 +619,7 @@
       b.textContent = "Close video";
     });
   });
-
+ 
   /* ---------- Electronegativity explorer ---------- */
   var EL = [
     ["H","Hydrogen",2.20,"n"],["Li","Lithium",0.98,"m"],["Be","Beryllium",1.57,"m"],["B","Boron",2.04,"x"],
@@ -639,9 +639,9 @@
   });
   selA.value = EL.map(function (e) { return e[0]; }).indexOf("Na");
   selB.value = EL.map(function (e) { return e[0]; }).indexOf("Cl");
-
+ 
   function bondName(d) { return d < 0.4 ? "Nonpolar covalent" : (d <= 1.7 ? "Polar covalent" : "Ionic"); }
-
+ 
   function updateEN() {
     var a = EL[selA.value], b = EL[selB.value];
     var hi = a[2] >= b[2] ? a : b, lo = a[2] >= b[2] ? b : a;
@@ -662,7 +662,7 @@
   selA.addEventListener("change", updateEN);
   selB.addEventListener("change", updateEN);
   updateEN();
-
+ 
   /* ---------- Lewis structure walkthrough ---------- */
   function dots(n, cx, cy, d) {
     var s = 6, pos = [
@@ -692,7 +692,7 @@
     return '<svg viewBox="0 0 90 70" role="img" aria-label="' + label + ' transfers ' + (dir === "l" ? "left" : "right") + '">' + line + '<text x="45" y="20" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="15" fill="currentColor">' + label + '</text></svg>';
   }
   function A(sym, n, c) { return atomSVG(sym, n, c); }
-
+ 
   var COMP = {
     NaCl: { label: "NaCl", formula: "NaCl", steps: [
       { head: "Identify the ions", text: "Sodium (Na) is a metal in Group 1, so it will lose electrons and become a cation. Chlorine (Cl) is a nonmetal in Group 17, so it will gain electrons and become an anion. Metal goes on the left.",
@@ -729,7 +729,7 @@
   var tabs = document.getElementById("lewisTabs"), stage = document.getElementById("lewisStage");
   var head = document.getElementById("lewisHead"), txt = document.getElementById("lewisText");
   var prev = document.getElementById("lewisPrev"), next = document.getElementById("lewisNext"), cnt = document.getElementById("lewisCount");
-
+ 
   Object.keys(COMP).forEach(function (k) {
     var b = document.createElement("button");
     b.type = "button"; b.innerHTML = COMP[k].label; b.setAttribute("data-k", k);
@@ -749,7 +749,7 @@
   prev.addEventListener("click", function () { if (stepIdx > 0) { stepIdx--; renderLewis(); } });
   next.addEventListener("click", function () { if (stepIdx < COMP[cur].steps.length - 1) { stepIdx++; renderLewis(); } });
   renderLewis();
-
+ 
   /* ---------- Ionic formula builder ---------- */
   var ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
   var CAT = [
@@ -808,14 +808,14 @@
   }
   bC.addEventListener("change", updateBuilder); bA.addEventListener("change", updateBuilder);
   updateBuilder();
-
+ 
   /* ---------- Self-check questions ---------- */
   function normFormula(s) {
     return s.replace(/[\u2080-\u2089]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x2080 + 48); })
             .replace(/[\s_]/g, "").replace(/[\[\{]/g, "(").replace(/[\]\}]/g, ")");
   }
   function normName(s) { return normFormula(s).toLowerCase(); }
-
+ 
   var Q = [
     { type: "numtype", text: "Magnesium (1.31) bonds with oxygen (3.44). What is the electronegativity difference, and what type of bond is expected?",
       ans: 2.13, bond: "Ionic",
@@ -868,9 +868,9 @@
             "A Roman numeral shows the iron\u2019s charge: iron(II) sulfate and iron(III) sulfate."] }
   ];
   var quiz = document.getElementById("quiz"), done = {}, tries = {};
-
+ 
   function el(html) { var d = document.createElement("div"); d.innerHTML = html; return d.firstChild; }
-
+ 
   Q.forEach(function (q, i) {
     var box = el('<div class="q"></div>');
     var h = '<div class="qtext">' + (i + 1) + '. ' + q.text + '</div>';
@@ -892,7 +892,7 @@
   });
   var score = el('<div class="score" id="score"></div>');
   quiz.appendChild(score);
-
+ 
   function feedback(i, cls, html) { document.getElementById("fb" + i).innerHTML = '<div class="fb ' + cls + '">' + html + '</div>'; }
   function updateScore() {
     var n = Object.keys(done).length;
@@ -902,7 +902,7 @@
     if (tries[i] >= 2) { msg += "<br><b>Worked solution:</b> " + q.work; done[i] = 1; }
     feedback(i, "try", msg);
   }
-
+ 
   quiz.addEventListener("click", function (ev) {
     var b = ev.target.closest("button[data-i]"); if (!b) return;
     var i = +b.getAttribute("data-i"), q = Q[i];
