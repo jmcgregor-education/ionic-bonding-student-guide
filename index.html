@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ionic Bonding, Naming, and Formula Writing – Student Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Source+Serif+4:opsz,wght@8..60,400..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #12203f;
+    --ink-soft: #3b4a6b;
+    --sapphire: #1f4bb8;
+    --sapphire-tint: #e6ecfa;
+    --ruby: #a8153c;
+    --ruby-tint: #fbe9ee;
+    --page: #f8faff;
+    --paper: #ffffff;
+    --line: #c9d3e6;
+    --good: #17603f;
+    --good-tint: #e1f3ea;
+    --warn: #7a4e00;
+    --warn-tint: #fff3d1;
+    --ui: "Archivo", "Segoe UI", Arial, sans-serif;
+    --read: "Source Serif 4", Georgia, "Times New Roman", serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font-family: var(--read);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: var(--ui); line-height: 1.15; margin: 0; }
+  h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 14px; }
+  h3 { font-size: 1.2rem; font-weight: 700; margin: 28px 0 8px; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  a { color: var(--sapphire); }
+  :focus-visible { outline: 3px solid var(--sapphire); outline-offset: 2px; border-radius: 3px; }
+ 
+  /* Hero */
+  .hero { background: var(--ink); color: #fff; padding: 40px 0 36px; }
+  .hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 800; font-stretch: 110%; letter-spacing: -0.02em; }
+  .hero p.lede { font-size: 1.2rem; color: #d5def5; margin: 14px 0 18px; max-width: 38ch; }
+  .teks { display: flex; gap: 8px; flex-wrap: wrap; }
+  .teks span { font-family: var(--ui); font-weight: 700; font-size: .9rem; background: #fff; color: var(--ink); padding: 3px 12px; border-radius: 999px; }
+  .gems { display: flex; gap: 10px; align-items: flex-end; }
+  .gem { text-align: center; font-family: var(--ui); font-size: .85rem; color: #d5def5; }
+  .gem svg { width: 120px; height: auto; display: block; }
+  .gem b { display: block; color: #fff; font-size: .95rem; }
+  .gem.ruby svg { --g: #d3224f; }
+  .gem.sapphire svg { --g: #2b5be0; margin-bottom: 14px; width: 96px; }
+  .gem polygon { fill: var(--g); }
+  .gem .lt { fill: #fff; opacity: .38; }
+  .gem .dk { fill: #000; opacity: .28; }
+  @media (max-width: 640px) { .hero .wrap { grid-template-columns: 1fr; } .gems { justify-content: flex-start; } }
+ 
+  /* Jump nav */
+  nav.jump { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+  nav.jump ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 4px; overflow-x: auto; }
+  nav.jump a { display: block; padding: 12px 12px; font-family: var(--ui); font-weight: 600; font-size: .92rem; color: var(--ink); text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; }
+  nav.jump a:hover { border-bottom-color: var(--sapphire); }
+ 
+  section { padding: 40px 0 8px; }
+  section + section { border-top: 1px solid var(--line); margin-top: 24px; }
+ 
+  /* Callouts */
+  .callout { border-left: 5px solid var(--sapphire); background: var(--sapphire-tint); padding: 14px 18px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout .tag { font-family: var(--ui); font-weight: 700; display: block; margin-bottom: 4px; }
+  .callout.warn { border-left-color: #d9961a; background: var(--warn-tint); }
+  .callout.warn .tag { color: var(--warn); }
+  .callout.think { border-left-color: var(--ruby); background: var(--ruby-tint); }
+  .callout.think .tag { color: var(--ruby); }
+ 
+  /* Can-do list */
+  .cando { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+  .cando li { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: start; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+  .cando .code { font-family: var(--ui); font-weight: 700; background: var(--sapphire); color: #fff; border-radius: 6px; padding: 2px 9px; font-size: .9rem; margin-top: 2px; }
+ 
+  /* Vocab */
+  dl.vocab { margin: 0; display: grid; grid-template-columns: minmax(130px, 200px) 1fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--paper); }
+  dl.vocab dt, dl.vocab dd { margin: 0; padding: 10px 14px; border-top: 1px solid var(--line); }
+  dl.vocab dt { font-family: var(--ui); font-weight: 700; color: var(--sapphire); background: #f2f5fc; }
+  dl.vocab dt:first-of-type, dl.vocab dt:first-of-type + dd { border-top: 0; }
+  @media (max-width: 560px) { dl.vocab { grid-template-columns: 1fr; } dl.vocab dd { border-top: 0; padding-top: 2px; } }
+ 
+  /* Tables */
+  .tablewrap { overflow-x: auto; margin: 14px 0 18px; }
+  table { border-collapse: collapse; width: 100%; background: var(--paper); font-size: 1rem; }
+  th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--ink); color: #fff; font-family: var(--ui); font-weight: 600; }
+  td:first-child { font-family: var(--ui); font-weight: 700; }
+ 
+  /* Write boxes */
+  .prompt-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+  .prompt { background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--ruby); border-radius: 8px; padding: 14px 16px; }
+  .prompt.b { border-top-color: var(--sapphire); }
+  .prompt h3 { margin-top: 0; }
+  @media (max-width: 640px) { .prompt-pair { grid-template-columns: 1fr; } }
+ 
+  /* Tools (calculator, stepper, quiz) */
+  .tool { background: var(--paper); border: 2px solid var(--ink); border-radius: 10px; padding: 18px; margin: 22px 0; }
+  .tool > h3 { margin-top: 0; }
+  label { font-family: var(--ui); font-weight: 600; font-size: .95rem; display: block; margin-bottom: 4px; }
+  select, input[type=number], input[type=text], textarea {
+    font: inherit; font-family: var(--ui); font-size: 1rem; padding: 8px 10px; border: 2px solid var(--line); border-radius: 6px; background: #fff; color: var(--ink); max-width: 100%;
+  }
+  select:focus, input:focus, textarea:focus { border-color: var(--sapphire); outline: none; box-shadow: 0 0 0 3px rgba(31,75,184,.25); }
+  textarea { width: 100%; min-height: 84px; resize: vertical; line-height: 1.45; }
+  button { font-family: var(--ui); font-weight: 700; font-size: .98rem; border: 2px solid var(--ink); background: var(--ink); color: #fff; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
+  button:hover { background: #22345f; }
+  button.ghost { background: #fff; color: var(--ink); }
+  button.ghost:hover { background: var(--sapphire-tint); }
+  button[disabled] { opacity: .4; cursor: not-allowed; }
+ 
+  .picker { display: flex; gap: 14px; flex-wrap: wrap; align-items: end; }
+  .picker .vs { font-family: var(--ui); font-weight: 700; padding-bottom: 10px; }
+  .scale { position: relative; margin: 26px 0 6px; }
+  .scale .bar { display: flex; height: 26px; border-radius: 6px; overflow: hidden; border: 2px solid var(--ink); }
+  .scale .z1 { width: 11.43%; background: #cfe3d8; }
+  .scale .z2 { width: 37.14%; background: #f3dfa6; }
+  .scale .z3 { width: 51.43%; background: #f0b3c3; }
+  .scale .marker { position: absolute; top: -12px; width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; border-top: 14px solid var(--ink); transform: translateX(-50%); transition: left .35s ease; }
+  .scale .ticks { display: flex; font-family: var(--ui); font-size: .8rem; color: var(--ink-soft); position: relative; height: 18px; margin-top: 4px; }
+  .scale .ticks span { position: absolute; transform: translateX(-50%); }
+  .scale .names { display: flex; font-family: var(--ui); font-size: .85rem; font-weight: 600; }
+  .scale .names span { text-align: center; padding: 2px 4px; }
+  .scale .names span:nth-child(1) { width: 11.43%; font-size: .7rem; }
+  .scale .names span:nth-child(2) { width: 37.14%; }
+  .scale .names span:nth-child(3) { width: 51.43%; }
+  .result { margin-top: 12px; padding: 12px 16px; border-radius: 8px; background: var(--sapphire-tint); font-family: var(--ui); }
+  .result .big { font-size: 1.25rem; font-weight: 700; }
+ 
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .tabs button { background: #fff; color: var(--ink); }
+  .tabs button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+  .stage { background: var(--page); border: 1px solid var(--line); border-radius: 8px; padding: 14px; min-height: 150px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px; }
+  .stage svg { height: 84px; width: auto; color: var(--ink); }
+  .stage .na { color: var(--sapphire); }
+  .stage .cl { color: var(--ruby); }
+  .stepinfo { margin: 14px 0 10px; }
+  .stepinfo .stephead { font-family: var(--ui); font-weight: 700; font-size: 1.1rem; }
+  .stepnav { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .stepnav .count { font-family: var(--ui); font-weight: 600; color: var(--ink-soft); }
+  .formula { font-family: var(--ui); font-weight: 700; font-size: 1.3rem; width: 100%; text-align: center; margin-top: 8px; }
+ 
+  /* Formula builder */
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 4px; min-height: 44px; }
+  .chip { font-family: var(--ui); font-weight: 700; font-size: 1.15rem; padding: 6px 14px; border-radius: 999px; border: 2px solid; background: #fff; }
+  .chip.cat { color: var(--sapphire); border-color: var(--sapphire); background: var(--sapphire-tint); }
+  .chip.an { color: var(--ruby); border-color: var(--ruby); background: var(--ruby-tint); }
+  .chip sup { font-size: .7em; }
+ 
+  /* Optional videos */
+  details.optvid { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); margin: 22px 0; }
+  details.optvid > summary { cursor: pointer; padding: 12px 16px; font-family: var(--ui); font-weight: 700; list-style: none; display: flex; gap: 10px; align-items: center; }
+  details.optvid > summary::-webkit-details-marker { display: none; }
+  details.optvid > summary::before { content: "\25B8"; color: var(--sapphire); font-size: 1.1rem; }
+  details.optvid[open] > summary::before { content: "\25BE"; }
+  details.optvid .pill { font-size: .78rem; font-weight: 700; background: var(--sapphire-tint); color: var(--sapphire); border-radius: 999px; padding: 1px 10px; }
+  .vidbody { padding: 0 16px 16px; }
+  .vidbody > p.vidnote { font-size: .92rem; color: var(--ink-soft); margin: 0 0 12px; }
+  .vid { border-top: 1px solid var(--line); padding: 14px 0 4px; }
+  .vid h4 { font-family: var(--ui); font-size: 1.05rem; margin: 0 0 2px; }
+  .vid .by { font-family: var(--ui); font-size: .88rem; color: var(--ink-soft); margin: 0 0 6px; }
+  .vid p { margin: 0 0 10px; }
+  .vid .actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; font-family: var(--ui); }
+  .vid .actions a { font-weight: 600; }
+  .frame { position: relative; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+  .frame iframe, .frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+ 
+  /* Quiz */
+  .q { border-top: 1px solid var(--line); padding: 18px 0; }
+  .q:first-of-type { border-top: 0; padding-top: 4px; }
+  .q .qtext { font-weight: 600; margin-bottom: 10px; }
+  .q .row { display: flex; gap: 12px; flex-wrap: wrap; align-items: end; margin-bottom: 10px; }
+  .fb { margin-top: 10px; padding: 10px 14px; border-radius: 8px; font-family: var(--ui); font-size: .98rem; }
+  .fb.good { background: var(--good-tint); color: var(--good); }
+  .fb.try { background: var(--warn-tint); color: var(--warn); }
+  .fb.info { background: var(--sapphire-tint); color: var(--ink); }
+  .fb ul { margin: 6px 0 0; padding-left: 20px; }
+  .score { font-family: var(--ui); font-weight: 700; margin-top: 14px; }
+ 
+ 
+  footer { padding: 30px 0 50px; color: var(--ink-soft); font-size: .9rem; font-family: var(--ui); }
+  sub, sup { line-height: 0; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .scale .marker { transition: none; } }
+</style>
+</head>
+<body>
+ 
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Ionic Bonding, Naming, and Formula Writing</h1>
+      <p class="lede">Rubies and sapphires are the same compound. By the end of this unit you’ll be able to explain how it’s bonded, write its formula, and name it.</p>
+      <div class="teks" aria-label="Standards covered"><span>TEKS C.6B</span><span>C.7A</span><span>C.7B</span><span>C.7D</span></div>
+    </div>
+    <div class="gems" aria-hidden="true">
+      <div class="gem ruby">
+        <svg viewBox="0 0 120 110"><polygon points="30,10 90,10 78,40 42,40"/><polygon class="lt" points="30,10 90,10 78,40 42,40"/><polygon points="30,10 42,40 5,40"/><polygon points="90,10 115,40 78,40"/><polygon class="dk" points="90,10 115,40 78,40"/><polygon points="5,40 42,40 60,105"/><polygon class="dk" points="42,40 78,40 60,105"/><polygon points="42,40 78,40 60,105"/><polygon class="dk" points="78,40 115,40 60,105"/><polygon points="78,40 115,40 60,105"/></svg>
+        <b>Ruby</b>Al<sub>2</sub>O<sub>3</sub>
+      </div>
+      <div class="gem sapphire">
+        <svg viewBox="0 0 120 110"><polygon points="30,10 90,10 78,40 42,40"/><polygon class="lt" points="30,10 90,10 78,40 42,40"/><polygon points="30,10 42,40 5,40"/><polygon points="90,10 115,40 78,40"/><polygon class="dk" points="90,10 115,40 78,40"/><polygon points="5,40 42,40 60,105"/><polygon class="dk" points="42,40 78,40 60,105"/><polygon points="42,40 78,40 60,105"/><polygon class="dk" points="78,40 115,40 60,105"/><polygon points="78,40 115,40 60,105"/></svg>
+        <b>Sapphire</b>Al<sub>2</sub>O<sub>3</sub>
+      </div>
+    </div>
+  </div>
+</header>
+ 
+<nav class="jump" aria-label="Sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="#goals">Goals</a></li>
+      <li><a href="#phenomenon">Phenomenon</a></li>
+      <li><a href="#vocab">Vocabulary</a></li>
+      <li><a href="#bonding">Why atoms bond</a></li>
+      <li><a href="#predict">Predict bond type</a></li>
+      <li><a href="#lewis">Lewis structures</a></li>
+      <li><a href="#properties">Properties</a></li>
+      <li><a href="#formulas">Writing formulas</a></li>
+      <li><a href="#naming">Naming</a></li>
+      <li><a href="#check">Check yourself</a></li>
+    </ul>
+  </div>
+</nav>
+ 
+<main class="wrap">
+ 
+<section id="goals">
+  <h2>What you’ll be able to do</h2>
+  <ul class="cando">
+    <li><span class="code">C.6B</span><span>Describe the structure of atoms and ions: the mass, electrical charge, and location of protons and neutrons (in the nucleus) and electrons (in the electron cloud).</span></li>
+    <li><span class="code">C.7A</span><span>Build an argument that uses periodic trends, like electronegativity, to predict what kind of bond will form between two elements.</span></li>
+    <li><span class="code">C.7B</span><span>Name and write the formulas for ionic compounds using IUPAC nomenclature rules, including compounds with polyatomic ions and metals that have more than one charge.</span></li>
+    <li><span class="code">C.7D</span><span>Analyze the properties of ionic substances by explaining them with the forces that hold the particles together.</span></li>
+  </ul>
+ 
+  <h3>Atom and ion basics</h3>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Particle</th><th>Charge</th><th>Relative mass</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr><td>Proton</td><td>+1</td><td>about 1 amu</td><td>Nucleus</td></tr>
+        <tr><td>Neutron</td><td>0</td><td>about 1 amu</td><td>Nucleus</td></tr>
+        <tr><td>Electron</td><td>−1</td><td>almost nothing (about 1/1836 of a proton)</td><td>Electron cloud</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>A neutral atom has equal numbers of protons and electrons. An <b>ion</b> has the same protons but a different number of electrons, so it carries a charge. Ions form when electrons move. The nucleus doesn’t change.</p>
+  <div class="vidgroup" data-group="teacher"></div>
+</section>
+ 
+<section id="phenomenon">
+  <h2>Two phenomena to explain</h2>
+  <p>You’ll keep coming back to these questions all unit. Make your first explanation now, using only what you already know. It’s okay to be wrong. You’ll revise it with evidence at the end.</p>
+ 
+  <div class="prompt-pair">
+    <div class="prompt">
+      <h3>Hard water</h3>
+      <p>Two showerheads hang in similar bathrooms. One builds up crusty residue. The other stays clean. Your teacher will show you both in the slides.</p>
+      <p><b>Do:</b> Draw an initial model and write an explanation of what might have caused the difference.</p>
+    </div>
+    <div class="prompt b">
+      <h3>Rubies vs. sapphires</h3>
+      <p>Both gems are made from the ionic compound formed between aluminum and oxygen, Al<sub>2</sub>O<sub>3</sub>. They don’t look alike.</p>
+      <p><b>Do:</b> Write what you notice and what you wonder about how the same compound can look so different.</p>
+    </div>
+  </div>
+ 
+  <div class="callout think">
+    <span class="tag">Think about it: salty bonds</span>
+    <p>Table salt (sodium chloride) is on your fries, in seawater, and inside your body. It’s one of the most common compounds on Earth. Why is it so common? And looking at the periodic table, why might sodium bond with chlorine? Jot down your ideas. You’ll check them in a few minutes.</p>
+  </div>
+  <div class="callout think">
+    <span class="tag">Think about it: same elements, different compounds</span>
+    <p>Your teacher will show you two compounds made of the same elements in different proportions. What looks the same? What looks different? Why might it matter to know exactly which one you have?</p>
+  </div>
+ 
+  <div class="callout think">
+    <span class="tag">Think about it: why formulas matter</span>
+    <p>There&rsquo;s an old chemistry rhyme about a kid who drinks something he thinks is H<sub>2</sub>O but is actually H<sub>2</sub>SO<sub>4</sub> (sulfuric acid). If a beaker were labeled only with a formula, what would you need to know to read it safely? Later in this guide you&rsquo;ll learn to read, write, and name formulas for ionic compounds.</p>
+  </div>
+</section>
+ 
+<section id="vocab">
+  <h2>Core vocabulary</h2>
+  <dl class="vocab">
+    <dt>anion</dt><dd>A negatively charged ion formed by gaining electrons. It is attracted to cations.</dd>
+    <dt>cation</dt><dd>A positively charged ion formed by losing electrons. It is attracted to anions.</dd>
+    <dt>chemical formula</dt><dd>A notation that shows which elements are in a compound and how many atoms (or ions) of each there are.</dd>
+    <dt>chemical nomenclature</dt><dd>A universally agreed-upon set of rules for naming and classifying chemicals.</dd>
+    <dt>electronegativity</dt><dd>How strongly an atom attracts electrons toward itself when it bonds with another atom.</dd>
+    <dt>formula unit</dt><dd>The lowest whole-number ratio of ions in an ionic compound, like one Na<sup>+</sup> for every one Cl<sup>&minus;</sup> in NaCl.</dd>
+    <dt>intramolecular force</dt><dd>A force that holds atoms together in a compound. Another name for a <i>chemical bond</i>.</dd>
+    <dt>ion</dt><dd>An atom or molecule with a charge because it gained or lost one or more electrons.</dd>
+    <dt>ionic bond</dt><dd>A chemical bond formed by the electrostatic attraction between positively and negatively charged ions.</dd>
+    <dt>ionic charge</dt><dd>An ion&rsquo;s positive or negative charge, caused by the loss or gain of electrons from an atom or group of atoms.</dd>
+    <dt>ionic compound</dt><dd>A substance made of positive and negative ions held together by ionic bonds.</dd>
+    <dt>ionization energy</dt><dd>The minimum energy needed to remove one valence electron from a neutral atom or molecule.</dd>
+    <dt>IUPAC rules</dt><dd>The standard set of rules, from the International Union of Pure and Applied Chemistry, used to name chemical compounds.</dd>
+    <dt>Lewis dot structure</dt><dd>A diagram that shows an element&rsquo;s valence electrons as dots.</dd>
+    <dt>main group metals</dt><dd>Metals in Groups 1 and 2 (the s block). They form cations with only one possible charge.</dd>
+    <dt>metals</dt><dd>Elements that generally have low ionization energies and tend to lose electrons to form cations.</dd>
+    <dt>multivalent metal</dt><dd>A metal that can form more than one charge, so its name needs a Roman numeral.</dd>
+    <dt>nonmetals</dt><dd>Elements that typically have high electronegativity and tend to gain electrons to form anions.</dd>
+    <dt>octet rule</dt><dd>An atom tends to gain, lose, or share electrons to end up with eight electrons in its outermost shell.</dd>
+    <dt>oxidation number</dt><dd>A number that describes an atom&rsquo;s charge by how many electrons it has gained or lost.</dd>
+    <dt>polyatomic ion</dt><dd>A group of covalently bonded atoms that acts as a single unit with an overall charge.</dd>
+    <dt>Roman numerals</dt><dd>The numerals in parentheses after a multivalent metal&rsquo;s name. They show the metal&rsquo;s charge.</dd>
+    <dt>subscripts</dt><dd>The small numbers after a symbol that show how many atoms (or ions) of that element are present. No number means one.</dd>
+    <dt>transition metals</dt><dd>Elements in Groups 3&ndash;12. Most can form more than one ion, and they typically have a partially filled <i>d</i> orbital.</dd>
+    <dt>valence electron</dt><dd>An electron in the outermost shell of an atom. These are the electrons that take part in bonding.</dd>
+  </dl>
+  <div class="callout">
+    <span class="tag">Memory tricks</span>
+    <p>Cations have a <i>cat</i> in them, and cats have paws, so cations are <b>PAWS-itive</b>. There’s also a plus sign hiding in the middle of ca<b>+</b>ion. <b>Anion</b> = <b>A N</b>egative <b>ION</b>.</p>
+  </div>
+</section>
+ 
+<section id="bonding">
+  <h2>Why atoms bond</h2>
+  <p>Most elements don’t stay on their own. They bond with other elements to lower their energy and reach a more stable arrangement of electrons.</p>
+  <p>A <b>compound</b> is two or more elements chemically bonded, with no overall charge. The bonds are made with valence electrons. Compounds are sorted into two main types, <b>ionic</b> or <b>covalent</b>, based on the kind of bond the elements make. To decide which type you have, look at what kinds of elements are involved and compare their electronegativities.</p>
+ 
+  <h3>How an ionic bond forms</h3>
+  <p>The octet rule says atoms give away or take electrons until their outer shell holds eight. (Hydrogen is the exception. It aims for two electrons in its first shell, or none at all if it loses its electron.)</p>
+  <p><b>Metals</b> have low ionization energy, so they lose electrons easily and become <b>cations</b>. <b>Nonmetals</b> have high electronegativity, so they pull electrons in and become <b>anions</b>. When a nonmetal’s strong pull meets a metal’s weak grip, one or more electrons transfer. The resulting oppositely charged ions attract each other by <b>electrostatic attraction</b> and lock into a regular, repeating crystal pattern.</p>
+ 
+  <div class="callout warn">
+    <span class="tag">Watch out</span>
+    <p>The ionic bond isn’t the electron jumping from one atom to another. The transfer creates the ions. The <i>bond</i> is the electrostatic attraction between those ions.</p>
+  </div>
+  <div class="vidgroup" data-group="bonding"></div>
+</section>
+ 
+<section id="predict">
+  <h2>Predict the bond type with electronegativity</h2>
+  <p>Subtract the two electronegativity values (bigger minus smaller). The size of the difference tells you what kind of bond to expect.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Electronegativity difference</th><th>Bond type</th></tr></thead>
+      <tbody>
+        <tr><td>Less than 0.4</td><td>Nonpolar covalent</td></tr>
+        <tr><td>0.4 to 1.7</td><td>Polar covalent</td></tr>
+        <tr><td>Greater than 1.7</td><td>Ionic</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Example: sodium is 0.93 and chlorine is 3.16. The difference is 3.16 − 0.93 = 2.23. That’s greater than 1.7, so the bond is ionic. Sodium transfers an electron to chlorine, making a cation and an anion held together by electrostatic attraction.</p>
+ 
+  <div class="callout warn">
+    <span class="tag">Watch out</span>
+    <p>Bonds aren’t simply “ionic” or “not ionic.” Bond character is a continuum, and no bond is ever 100% ionic. The bigger the electronegativity difference, the more ionic the bond is. Also, books draw the cutoff lines in slightly different places, so use the values your teacher gives you.</p>
+  </div>
+ 
+  <div class="tool" id="enTool">
+    <h3>Try it: electronegativity explorer</h3>
+    <div class="picker">
+      <div><label for="elA">Element 1</label><select id="elA"></select></div>
+      <span class="vs" aria-hidden="true">and</span>
+      <div><label for="elB">Element 2</label><select id="elB"></select></div>
+    </div>
+    <div class="scale" aria-hidden="true">
+      <div class="marker" id="marker"></div>
+      <div class="bar"><div class="z1"></div><div class="z2"></div><div class="z3"></div></div>
+      <div class="ticks"><span style="left:0">0</span><span style="left:11.43%">0.4</span><span style="left:48.57%">1.7</span><span style="left:100%">3.5</span></div>
+      <div class="names"><span>Non-polar</span><span>Polar covalent</span><span>Ionic</span></div>
+    </div>
+    <div class="result" id="enResult" aria-live="polite"></div>
+  </div>
+  <div class="vidgroup" data-group="predict"></div>
+</section>
+ 
+<section id="lewis">
+  <h2>Draw ionic compounds with Lewis structures</h2>
+  <p>A Lewis structure shows why a formula is written the way it is. You draw the electron transfer first, then show the finished ions.</p>
+  <ol>
+    <li><b>Identify the ions.</b> Find the metal (it will lose electrons and become a cation) and the nonmetal (it will gain electrons and become an anion). Write the metal on the left and the nonmetal on the right.</li>
+    <li><b>Count valence electrons.</b> Use each element’s group number. Add that many dots around the symbol.</li>
+    <li><b>Show the transfer.</b> Draw arrows from the metal to the nonmetal. Add more atoms until the metal has lost <i>all</i> its valence electrons and every nonmetal has a full octet.</li>
+    <li><b>Finalize.</b> Rewrite each ion in brackets with its charge. Use subscripts when you need more than one ion. Check that the charges add up to zero.</li>
+  </ol>
+ 
+  <div class="tool" id="lewisTool">
+    <h3>Walk through it</h3>
+    <div class="tabs" id="lewisTabs" role="group" aria-label="Choose a compound"></div>
+    <div class="stage" id="lewisStage"></div>
+    <div class="stepinfo" aria-live="polite">
+      <div class="stephead" id="lewisHead"></div>
+      <div id="lewisText"></div>
+    </div>
+    <div class="stepnav">
+      <button class="ghost" id="lewisPrev">Back</button>
+      <button id="lewisNext">Next step</button>
+      <span class="count" id="lewisCount"></span>
+    </div>
+  </div>
+</section>
+ 
+<section id="properties">
+  <h2>Properties of ionic compounds</h2>
+  <p>The type of bond in a substance affects how it behaves. Ionic compounds share a set of properties, and every one of them traces back to ions held in place by electrostatic attraction.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Property</th><th>What you’ll observe</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Crystal structure</td><td>Hard crystals with a regular shape</td><td>Ions pack into a repeating pattern called a crystal lattice, which adds to the compound’s stability and strength.</td></tr>
+        <tr><td>High melting and boiling points</td><td>Needs a lot of heat to melt</td><td>The strong electrostatic forces between ions take a large amount of energy to overcome.</td></tr>
+        <tr><td>Brittle</td><td>Shatters when hit instead of bending</td><td>A hit shifts the lattice so ions of the same charge line up and repel each other.</td></tr>
+        <tr><td>Dissolves in water</td><td>Many (not all) ionic compounds dissolve</td><td>Water molecules are polar. They surround and separate the individual ions.</td></tr>
+        <tr><td>Conducts electricity</td><td>Not as a solid. Yes when dissolved in water (or melted).</td><td>Ions in a solid are locked in place. Dissolved ions are free to move and carry charge.</td></tr>
+      </tbody>
+    </table>
+  </div>
+ 
+  <h3>What makes an ionic bond stronger?</h3>
+  <p>The attraction is stronger when the <b>charges on the ions are larger</b> and when the <b>ions are smaller</b>, because small ions can get physically closer together.</p>
+  <div class="callout warn">
+    <span class="tag">Watch out</span>
+    <p>Charge isn’t the only factor. Ion size and electronegativity difference matter too.</p>
+  </div>
+</section>
+ 
+<section id="formulas">
+  <h2>Writing ionic formulas</h2>
+  <p>A <b>chemical formula</b> uses element symbols to show which elements are in a compound and <b>subscripts</b> to show how many of each. A symbol with no subscript means one.</p>
+  <p>Ionic compounds don&rsquo;t form separate molecules. Huge numbers of ions pack together into a crystal. So an ionic formula shows a <b>formula unit</b>, the lowest whole-number ratio of ions. For sodium chloride that&rsquo;s one sodium ion for every one chloride ion, so the formula is NaCl. The positive and negative charges balance, so there&rsquo;s no overall charge.</p>
+ 
+  <div class="callout warn">
+    <span class="tag">Watch out: charge is not the subscript</span>
+    <p>Ionic charges are written as <b>superscripts</b> (Mg<sup>2+</sup>) and show how many electrons an atom gained or lost. Subscripts show how many of each ion are in the formula unit (MgCl<sub>2</sub>). Don&rsquo;t mix them up. Your Lewis structures can help you find the charges and how many of each ion you need.</p>
+  </div>
+ 
+  <h3>Four guidelines for ionic formulas</h3>
+  <ol>
+    <li>The net charge must be zero.</li>
+    <li>The cation is always listed before the anion.</li>
+    <li>The formula of a polyatomic ion is written as a unit.</li>
+    <li>If more than one polyatomic ion is needed, put it in parentheses with a subscript after.</li>
+  </ol>
+ 
+  <h3>Balance the charges</h3>
+  <p>Take Mg<sup>2+</sup> and Cl<sup>&minus;</sup>. One magnesium ion has a charge of +2. Each chloride ion is &minus;1, so it takes two of them to cancel: <b>MgCl<sub>2</sub></b>.</p>
+  <p>The <b>cross-and-drop</b> shortcut gets the same result:</p>
+  <ol>
+    <li>Write the ions with their charges: Al<sup>3+</sup> and O<sup>2&minus;</sup>.</li>
+    <li>Cross the charge numbers. The 3 becomes the subscript on O. The 2 becomes the subscript on Al. Drop the signs.</li>
+    <li>Reduce to the lowest whole-number ratio if you can.</li>
+    <li>Check: 2 &times; (+3) = +6 and 3 &times; (&minus;2) = &minus;6. Net charge is zero. The formula is <b>Al<sub>2</sub>O<sub>3</sub></b>, the compound in your rubies and sapphires.</li>
+  </ol>
+  <div class="callout warn">
+    <span class="tag">Don&rsquo;t skip the reducing step</span>
+    <p>Sn<sup>4+</sup> and O<sup>2&minus;</sup> cross to Sn<sub>2</sub>O<sub>4</sub>, but the lowest ratio is <b>SnO<sub>2</sub></b>. Also keep practicing the &ldquo;balance the charges&rdquo; way of thinking, not just the shortcut. It&rsquo;s the one that still works when a metal can have more than one charge.</p>
+  </div>
+  <div class="vidgroup" data-group="formulas"></div>
+</section>
+ 
+<section id="naming">
+  <h2>Naming ionic compounds</h2>
+  <p>Naming follows IUPAC rules, a standard system that keeps scientists everywhere from getting confused. In every ionic name and formula, the cation comes first and the anion comes second.</p>
+ 
+  <h3>Binary ionic compounds</h3>
+  <p>Binary means two elements: one metal ion and one nonmetal ion. When the metal has a fixed charge, say the metal&rsquo;s name, then the nonmetal&rsquo;s name with the ending changed to <b>-ide</b>. MgCl<sub>2</sub> is magnesium chloride. Mg<sub>3</sub>N<sub>2</sub> is magnesium nitride.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Nonmetal</th><th>Ion name</th><th>Charge</th></tr></thead>
+      <tbody>
+        <tr><td>Fluorine, chlorine, bromine, iodine (Group 17)</td><td>fluoride, chloride, bromide, iodide</td><td>1&minus;</td></tr>
+        <tr><td>Oxygen, sulfur (Group 16)</td><td>oxide, sulfide</td><td>2&minus;</td></tr>
+        <tr><td>Nitrogen, phosphorus (Group 15)</td><td>nitride, phosphide</td><td>3&minus;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout">
+    <span class="tag">Remember</span>
+    <p>Ionic names don&rsquo;t use number prefixes. MgCl<sub>2</sub> is &ldquo;magnesium chloride,&rdquo; not &ldquo;magnesium dichloride.&rdquo; The ratio comes from the charges. Say the anion names out loud while you look at the periodic table. It helps you remember the spelling and sound of the &ldquo;-ide&rdquo; endings.</p>
+  </div>
+ 
+  <h3>Compounds with polyatomic ions</h3>
+  <p>A <b>polyatomic ion</b> is a group of covalently bonded atoms that acts as one unit with an overall charge. Naming is the same as for binary compounds: cation name, then anion name. Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub> is calcium phosphate. Keep the polyatomic ion&rsquo;s name as it is. Don&rsquo;t change its ending to &ldquo;-ide.&rdquo;</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Name</th><th>Formula</th><th>Charge</th></tr></thead>
+      <tbody>
+        <tr><td>ammonium</td><td>NH<sub>4</sub></td><td>1+</td></tr>
+        <tr><td>hydroxide</td><td>OH</td><td>1&minus;</td></tr>
+        <tr><td>nitrate</td><td>NO<sub>3</sub></td><td>1&minus;</td></tr>
+        <tr><td>acetate</td><td>C<sub>2</sub>H<sub>3</sub>O<sub>2</sub></td><td>1&minus;</td></tr>
+        <tr><td>hydrogen carbonate</td><td>HCO<sub>3</sub></td><td>1&minus;</td></tr>
+        <tr><td>carbonate</td><td>CO<sub>3</sub></td><td>2&minus;</td></tr>
+        <tr><td>sulfate</td><td>SO<sub>4</sub></td><td>2&minus;</td></tr>
+        <tr><td>phosphate</td><td>PO<sub>4</sub></td><td>3&minus;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Use the Periodic Table and Polyatomic Chart from your teacher for the full list.</p>
+  <div class="callout warn">
+    <span class="tag">Watch out</span>
+    <p>Not every polyatomic ion needs parentheses. Use them only when you need <b>more than one</b> of that ion. NaOH has none. Ca(OH)<sub>2</sub> needs them.</p>
+  </div>
+ 
+  <h3>Metals that can have more than one charge</h3>
+  <p>Some metals form more than one kind of ion. These are <b>multivalent metals</b>. Most transition metals are multivalent, and so are tin and lead. These metals need an extra step in the name: write the metal&rsquo;s name, then its charge as a <b>Roman numeral</b> in parentheses, then the anion.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Metal</th><th>Possible charges</th></tr></thead>
+      <tbody>
+        <tr><td>Iron</td><td>2+, 3+</td></tr>
+        <tr><td>Copper</td><td>1+, 2+</td></tr>
+        <tr><td>Tin</td><td>2+, 4+</td></tr>
+        <tr><td>Lead</td><td>2+, 4+</td></tr>
+        <tr><td>Chromium</td><td>2+, 3+ (and 6+ in some compounds)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout warn">
+    <span class="tag">Watch out</span>
+    <p>Roman numerals aren&rsquo;t just for transition metals. Tin and lead need them too. But Groups 1 and 2, aluminum, and the transition metals zinc, cadmium, and silver form only one ion, so they <b>don&rsquo;t</b> get a Roman numeral.</p>
+  </div>
+  <p>Why does the charge matter? Iron and sulfate can make two different compounds: FeSO<sub>4</sub> is iron(II) sulfate, and Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> is iron(III) sulfate. &ldquo;Iron sulfate&rdquo; alone wouldn&rsquo;t tell you which one you have.</p>
+  <p><b>Writing a formula from a name:</b> tin(IV) bromide means Sn<sup>4+</sup> with Br<sup>&minus;</sup>. It takes four bromide ions to balance one Sn<sup>4+</sup>, so the formula is SnBr<sub>4</sub>.</p>
+  <p><b>Finding the charge from a formula:</b> in Fe<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>, three sulfate ions are 3 &times; (&minus;2) = &minus;6. The two iron ions must total +6, so each is 3+. The name is iron(III) sulfate.</p>
+  <div class="callout warn">
+    <span class="tag">Watch out</span>
+    <p>The subscript on the anion isn&rsquo;t always the metal&rsquo;s charge. In MnO<sub>2</sub>, the two O<sup>2&minus;</sup> ions total 4&minus;, so one Mn is <b>4+</b>, not 2+. Ionic formulas are always written in the smallest ratio of ions.</p>
+  </div>
+ 
+  <h3>Naming, step by step</h3>
+  <ol>
+    <li>Find the cation. Is it a metal, or polyatomic like NH<sub>4</sub><sup>+</sup>?</li>
+    <li>If it&rsquo;s a metal, decide whether it needs a Roman numeral. Balance the charges to find its charge.</li>
+    <li>Find the anion. A single nonmetal ion ends in <b>-ide</b>. A polyatomic ion keeps its name.</li>
+    <li>Write the cation name (with the Roman numeral if needed), then the anion name.</li>
+  </ol>
+ 
+  <div class="tool" id="builder">
+    <h3>Try it: ionic formula builder</h3>
+    <div class="picker">
+      <div><label for="bC">Cation (positive ion)</label><select id="bC"></select></div>
+      <span class="vs" aria-hidden="true">and</span>
+      <div><label for="bA">Anion (negative ion)</label><select id="bA"></select></div>
+    </div>
+    <div class="chips" id="bChips" aria-hidden="true"></div>
+    <div class="result" id="bResult" aria-live="polite"></div>
+  </div>
+  <div class="vidgroup" data-group="naming"></div>
+</section>
+ 
+<section id="check">
+  <h2>Check yourself</h2>
+  <p>Give every question a real try before you check. Feedback appears after you answer. Use your Periodic Table of Electronegativities and Polyatomic Chart if you need them.</p>
+  <div class="tool" id="quiz"></div>
+</section>
+ 
+ 
+</main>
+ 
+<footer><div class="wrap">Based on Summit K12 Lesson Guides 4.1 and 4.2, rewritten for students.</div></footer>
+ 
+<script>
+(function () {
+  "use strict";
+ 
+  /* ---------- Optional videos ----------
+     To add your own (e.g., a NotebookLM video), put it in the "teacher" group below:
+       { group: "teacher", title: "Your title", by: "Mr. McGregor", note: "What it covers.", id: "YOUTUBE_ID" }
+     or, for an MP4 in the same GitHub folder:
+       { group: "teacher", title: "...", by: "...", note: "...", src: "ionic-bonding-video.mp4" }
+     Groups with no videos stay hidden. */
+  var GROUPS = {
+    teacher:  { summary: "Videos from your teacher" },
+    bonding:  { summary: "Video: how ionic bonds form" },
+    predict:  { summary: "Video: electronegativity and bond type" },
+    formulas: { summary: "Video: writing ionic formulas" },
+    naming:   { summary: "Videos: naming ionic compounds" }
+  };
+  var VIDEOS = [
+    { group: "bonding", title: "Ionic bonds", by: "Khan Academy", id: "FaeAurHnQJs",
+      note: "Follows sodium and chlorine step by step, using Lewis dots, until they become ions and bond." },
+    { group: "predict", title: "Electronegativity and bonding", by: "Khan Academy", id: "126N4hox9YA",
+      note: "Uses electronegativity differences to sort bonds into covalent, polar covalent, and ionic. The cutoff numbers may differ a little from the ones in this guide. Use the values from your class." },
+    { group: "formulas", title: "How to write ionic formulas with polyatomic ions", by: "The Organic Chemistry Tutor", id: "stu2omPRvbs",
+      note: "Lots of worked examples, including polyatomic ions, transition metals, and Roman numerals. Skip to the type you need help with." },
+    { group: "naming", title: "Naming ions and ionic compounds", by: "Khan Academy", id: "ptAw20kem90",
+      note: "A short intro to naming binary ionic compounds, using KCl. Helpful if the \u201C-ide\u201D endings feel shaky." },
+    { group: "naming", title: "How to name ionic compounds with transition metals", by: "The Organic Chemistry Tutor", id: "eM5mDnQX0k8",
+      note: "Naming with polyatomic ions and Roman numerals, with many examples." }
+  ];
+  function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); }
+  Array.prototype.forEach.call(document.querySelectorAll(".vidgroup"), function (box) {
+    var g = box.getAttribute("data-group"), list = VIDEOS.filter(function (v) { return v.group === g && (v.id || v.src); });
+    if (!list.length) { box.style.display = "none"; return; }
+    var html = '<details class="optvid"><summary>' + esc(GROUPS[g].summary) + ' <span class="pill">Optional</span></summary><div class="vidbody">' +
+      '<p class="vidnote">These are extra help, not required. If a video won\u2019t play here (some school networks block YouTube), use the link to open it in a new tab.</p>';
+    list.forEach(function (v, k) {
+      html += '<div class="vid"><h4>' + esc(v.title) + '</h4><div class="by">' + esc(v.by) + '</div><p>' + esc(v.note) + '</p>' +
+        '<div class="actions"><button type="button" class="ghost playvid" data-g="' + g + '" data-k="' + k + '">Watch here</button>' +
+        (v.id ? '<a href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">Open on YouTube</a>' : '') +
+        '</div><div class="slot"></div></div>';
+    });
+    box.innerHTML = html + '</div></details>';
+    box.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button.playvid"); if (!b) return;
+      var v = list[+b.getAttribute("data-k")], slot = b.closest(".vid").querySelector(".slot");
+      if (slot.firstChild) { slot.innerHTML = ""; b.textContent = "Watch here"; return; }
+      slot.innerHTML = '<div class="frame">' + (v.id
+        ? '<iframe src="https://www.youtube-nocookie.com/embed/' + v.id + '?rel=0" title="' + esc(v.title) + '" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>'
+        : '<video src="' + esc(v.src) + '" controls preload="metadata" title="' + esc(v.title) + '"></video>') + '</div>';
+      b.textContent = "Close video";
+    });
+  });
+ 
+  /* ---------- Electronegativity explorer ---------- */
+  var EL = [
+    ["H","Hydrogen",2.20,"n"],["Li","Lithium",0.98,"m"],["Be","Beryllium",1.57,"m"],["B","Boron",2.04,"x"],
+    ["C","Carbon",2.55,"n"],["N","Nitrogen",3.04,"n"],["O","Oxygen",3.44,"n"],["F","Fluorine",3.98,"n"],
+    ["Na","Sodium",0.93,"m"],["Mg","Magnesium",1.31,"m"],["Al","Aluminum",1.61,"m"],["Si","Silicon",1.90,"x"],
+    ["P","Phosphorus",2.19,"n"],["S","Sulfur",2.58,"n"],["Cl","Chlorine",3.16,"n"],["K","Potassium",0.82,"m"],
+    ["Ca","Calcium",1.00,"m"],["Br","Bromine",2.96,"n"],["I","Iodine",2.66,"n"],["Cs","Cesium",0.79,"m"],["Ba","Barium",0.89,"m"]
+  ];
+  var TYPE = { m: "metal", n: "nonmetal", x: "metalloid" };
+  var selA = document.getElementById("elA"), selB = document.getElementById("elB");
+  EL.forEach(function (e, i) {
+    [selA, selB].forEach(function (s) {
+      var o = document.createElement("option");
+      o.value = i; o.textContent = e[1] + " (" + e[0] + ") \u2013 " + e[2].toFixed(2);
+      s.appendChild(o);
+    });
+  });
+  selA.value = EL.map(function (e) { return e[0]; }).indexOf("Na");
+  selB.value = EL.map(function (e) { return e[0]; }).indexOf("Cl");
+ 
+  function bondName(d) { return d < 0.4 ? "Nonpolar covalent" : (d <= 1.7 ? "Polar covalent" : "Ionic"); }
+ 
+  function updateEN() {
+    var a = EL[selA.value], b = EL[selB.value];
+    var hi = a[2] >= b[2] ? a : b, lo = a[2] >= b[2] ? b : a;
+    var d = Math.round((hi[2] - lo[2]) * 100) / 100;
+    var name = bondName(d);
+    document.getElementById("marker").style.left = (Math.min(d, 3.5) / 3.5 * 100) + "%";
+    var html = '<div class="big">' + hi[0] + ' \u2212 ' + lo[0] + ' = ' + hi[2].toFixed(2) + ' \u2212 ' + lo[2].toFixed(2) + ' = ' + d.toFixed(2) + ' \u2192 ' + name + '</div>';
+    html += '<div>' + a[1] + ' is a ' + TYPE[a[3]] + '. ' + b[1] + ' is a ' + TYPE[b[3]] + '.</div>';
+    if (name === "Ionic" && a[3] !== "m" && b[3] !== "m") {
+      html += '<div>Heads up: the number says ionic, but neither element is a metal. Ionic bonds form between a metal and a nonmetal, so a bond like this is usually treated as polar covalent.</div>';
+    } else if (name === "Ionic") {
+      html += '<div>A metal and a nonmetal with a large difference: one or more electrons transfer, forming a cation and an anion.</div>';
+    } else if (a[3] === "m" && b[3] === "m") {
+      html += '<div>Two metals don\u2019t make ionic or covalent bonds. They form metallic bonds, which you\u2019ll study later.</div>';
+    }
+    document.getElementById("enResult").innerHTML = html;
+  }
+  selA.addEventListener("change", updateEN);
+  selB.addEventListener("change", updateEN);
+  updateEN();
+ 
+  /* ---------- Lewis structure walkthrough ---------- */
+  function dots(n, cx, cy, d) {
+    var s = 6, pos = [
+      [[cx - s, cy - d], [cx + s, cy - d]],
+      [[cx + d, cy - s], [cx + d, cy + s]],
+      [[cx + s, cy + d], [cx - s, cy + d]],
+      [[cx - d, cy + s], [cx - d, cy - s]]
+    ], out = "", i, side, slot;
+    for (i = 0; i < n; i++) {
+      side = i % 4; slot = i < 4 ? 0 : 1;
+      out += '<circle cx="' + pos[side][slot][0] + '" cy="' + pos[side][slot][1] + '" r="3.2" fill="currentColor"/>';
+    }
+    return out;
+  }
+  function atomSVG(sym, n, cls) {
+    return '<svg class="' + cls + '" viewBox="0 0 70 70" role="img" aria-label="' + sym + ' atom with ' + n + ' dots"><text x="35" y="36" text-anchor="middle" dominant-baseline="central" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="21" fill="currentColor">' + sym + '</text>' + dots(n, 35, 35, 24) + '</svg>';
+  }
+  function ionSVG(sym, n, charge, cls) {
+    return '<svg class="' + cls + '" viewBox="0 0 120 80" role="img" aria-label="' + sym + ' ion with charge ' + charge + ' and ' + n + ' dots">' +
+      '<path d="M22 6 H14 V74 H22 M86 6 H94 V74 H86" fill="none" stroke="currentColor" stroke-width="2.5"/>' +
+      '<text x="54" y="41" text-anchor="middle" dominant-baseline="central" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="21" fill="currentColor">' + sym + '</text>' +
+      dots(n, 54, 40, 25) +
+      '<text x="98" y="14" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="17" fill="currentColor">' + charge + '</text></svg>';
+  }
+  function arrowSVG(label, dir) {
+    var line = dir === "l" ? '<path d="M82 34 H12 M24 24 L10 34 L24 44" fill="none" stroke="currentColor" stroke-width="3"/>' : '<path d="M8 34 H78 M66 24 L80 34 L66 44" fill="none" stroke="currentColor" stroke-width="3"/>';
+    return '<svg viewBox="0 0 90 70" role="img" aria-label="' + label + ' transfers ' + (dir === "l" ? "left" : "right") + '">' + line + '<text x="45" y="20" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="15" fill="currentColor">' + label + '</text></svg>';
+  }
+  function A(sym, n, c) { return atomSVG(sym, n, c); }
+ 
+  var COMP = {
+    NaCl: { label: "NaCl", formula: "NaCl", steps: [
+      { head: "Identify the ions", text: "Sodium (Na) is a metal in Group 1, so it will lose electrons and become a cation. Chlorine (Cl) is a nonmetal in Group 17, so it will gain electrons and become an anion. Metal goes on the left.",
+        html: A("Na", 0, "na") + A("Cl", 0, "cl") },
+      { head: "Count valence electrons", text: "Group 1 means 1 valence electron for Na. Group 17 means 7 valence electrons for Cl.",
+        html: A("Na", 1, "na") + A("Cl", 7, "cl") },
+      { head: "Show the transfer", text: "Na gives its one valence electron to Cl. Now Na has lost all its valence electrons, and Cl has a full octet.",
+        html: A("Na", 1, "na") + arrowSVG("1 e\u207B", "r") + A("Cl", 7, "cl") },
+      { head: "Finalize the diagram", text: "Rewrite each in brackets with its charge. One 1+ and one 1\u2212 add up to zero, so the formula is NaCl.",
+        html: ionSVG("Na", 0, "+", "na") + ionSVG("Cl", 8, "\u2212", "cl"), formula: "NaCl" }
+    ]},
+    CaO: { label: "CaO", formula: "CaO", steps: [
+      { head: "Identify the ions", text: "Calcium (Ca) is a metal in Group 2. Oxygen (O) is a nonmetal in Group 16. Ca will become the cation and O the anion.",
+        html: A("Ca", 0, "na") + A("O", 0, "cl") },
+      { head: "Count valence electrons", text: "Group 2 means 2 valence electrons for Ca. Group 16 means 6 valence electrons for O.",
+        html: A("Ca", 2, "na") + A("O", 6, "cl") },
+      { head: "Show the transfer", text: "Ca gives both valence electrons to O. Ca has lost them all, and O now has 8.",
+        html: A("Ca", 2, "na") + arrowSVG("2 e\u207B", "r") + A("O", 6, "cl") },
+      { head: "Finalize the diagram", text: "Ca ended up 2+ and O ended up 2\u2212. The charges cancel with one of each, so the formula is CaO.",
+        html: ionSVG("Ca", 0, "2+", "na") + ionSVG("O", 8, "2\u2212", "cl"), formula: "CaO" }
+    ]},
+    MgCl2: { label: "MgCl\u2082", formula: "MgCl\u2082", steps: [
+      { head: "Identify the ions", text: "Magnesium (Mg) is a metal in Group 2. Chlorine (Cl) is a nonmetal in Group 17. We\u2019ll need to see how many Cl atoms it takes.",
+        html: A("Mg", 0, "na") + A("Cl", 0, "cl") },
+      { head: "Count valence electrons", text: "Mg has 2 valence electrons. Each Cl has 7. Each Cl needs only 1 more electron for an octet, but Mg has 2 to give away. So you\u2019ll need two Cl atoms.",
+        html: A("Cl", 7, "cl") + A("Mg", 2, "na") + A("Cl", 7, "cl") },
+      { head: "Show the transfer", text: "Mg gives one electron to each Cl. Now Mg has lost both valence electrons, and both Cl atoms have a full octet.",
+        html: A("Cl", 7, "cl") + arrowSVG("1 e\u207B", "l") + A("Mg", 2, "na") + arrowSVG("1 e\u207B", "r") + A("Cl", 7, "cl") },
+      { head: "Finalize the diagram", text: "One Mg is 2+. Two Cl are 1\u2212 each, which is 2\u2212 total. The charges balance, so the subscript 2 goes on Cl: MgCl\u2082.",
+        html: ionSVG("Mg", 0, "2+", "na") + ionSVG("Cl", 8, "\u2212", "cl") + ionSVG("Cl", 8, "\u2212", "cl"), formula: "MgCl\u2082" }
+    ]}
+  };
+  var cur = "NaCl", stepIdx = 0;
+  var tabs = document.getElementById("lewisTabs"), stage = document.getElementById("lewisStage");
+  var head = document.getElementById("lewisHead"), txt = document.getElementById("lewisText");
+  var prev = document.getElementById("lewisPrev"), next = document.getElementById("lewisNext"), cnt = document.getElementById("lewisCount");
+ 
+  Object.keys(COMP).forEach(function (k) {
+    var b = document.createElement("button");
+    b.type = "button"; b.innerHTML = COMP[k].label; b.setAttribute("data-k", k);
+    b.addEventListener("click", function () { cur = k; stepIdx = 0; renderLewis(); });
+    tabs.appendChild(b);
+  });
+  function renderLewis() {
+    var c = COMP[cur], s = c.steps[stepIdx];
+    Array.prototype.forEach.call(tabs.children, function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-k") === cur ? "true" : "false"); });
+    stage.innerHTML = s.html + (s.formula ? '<div class="formula">Formula: ' + s.formula + '</div>' : "");
+    head.textContent = "Step " + (stepIdx + 1) + ": " + s.head;
+    txt.textContent = s.text;
+    cnt.textContent = "Step " + (stepIdx + 1) + " of " + c.steps.length;
+    prev.disabled = stepIdx === 0;
+    next.disabled = stepIdx === c.steps.length - 1;
+  }
+  prev.addEventListener("click", function () { if (stepIdx > 0) { stepIdx--; renderLewis(); } });
+  next.addEventListener("click", function () { if (stepIdx < COMP[cur].steps.length - 1) { stepIdx++; renderLewis(); } });
+  renderLewis();
+ 
+  /* ---------- Ionic formula builder ---------- */
+  var ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII"];
+  var CAT = [
+    {s:"Li",n:"lithium",c:1,g:"Fixed charge"},{s:"Na",n:"sodium",c:1,g:"Fixed charge"},{s:"K",n:"potassium",c:1,g:"Fixed charge"},
+    {s:"Mg",n:"magnesium",c:2,g:"Fixed charge"},{s:"Ca",n:"calcium",c:2,g:"Fixed charge"},{s:"Ba",n:"barium",c:2,g:"Fixed charge"},
+    {s:"Al",n:"aluminum",c:3,g:"Fixed charge"},{s:"Zn",n:"zinc",c:2,g:"Fixed charge"},{s:"Ag",n:"silver",c:1,g:"Fixed charge"},
+    {s:"Fe",n:"iron",c:2,m:1,g:"Multivalent (Roman numeral)"},{s:"Fe",n:"iron",c:3,m:1,g:"Multivalent (Roman numeral)"},
+    {s:"Cu",n:"copper",c:1,m:1,g:"Multivalent (Roman numeral)"},{s:"Cu",n:"copper",c:2,m:1,g:"Multivalent (Roman numeral)"},
+    {s:"Sn",n:"tin",c:2,m:1,g:"Multivalent (Roman numeral)"},{s:"Sn",n:"tin",c:4,m:1,g:"Multivalent (Roman numeral)"},
+    {s:"Pb",n:"lead",c:2,m:1,g:"Multivalent (Roman numeral)"},{s:"Pb",n:"lead",c:4,m:1,g:"Multivalent (Roman numeral)"},
+    {s:"Cr",n:"chromium",c:3,m:1,g:"Multivalent (Roman numeral)"},{s:"Mn",n:"manganese",c:2,m:1,g:"Multivalent (Roman numeral)"},{s:"Mn",n:"manganese",c:4,m:1,g:"Multivalent (Roman numeral)"},
+    {s:"NH4",n:"ammonium",c:1,p:1,g:"Polyatomic"}
+  ];
+  var ANI = [
+    {s:"F",n:"fluoride",c:1,g:"Single nonmetal"},{s:"Cl",n:"chloride",c:1,g:"Single nonmetal"},{s:"Br",n:"bromide",c:1,g:"Single nonmetal"},{s:"I",n:"iodide",c:1,g:"Single nonmetal"},
+    {s:"O",n:"oxide",c:2,g:"Single nonmetal"},{s:"S",n:"sulfide",c:2,g:"Single nonmetal"},{s:"N",n:"nitride",c:3,g:"Single nonmetal"},{s:"P",n:"phosphide",c:3,g:"Single nonmetal"},
+    {s:"OH",n:"hydroxide",c:1,p:1,g:"Polyatomic"},{s:"NO3",n:"nitrate",c:1,p:1,g:"Polyatomic"},{s:"C2H3O2",n:"acetate",c:1,p:1,g:"Polyatomic"},
+    {s:"HCO3",n:"hydrogen carbonate",c:1,p:1,g:"Polyatomic"},{s:"CO3",n:"carbonate",c:2,p:1,g:"Polyatomic"},{s:"SO4",n:"sulfate",c:2,p:1,g:"Polyatomic"},{s:"PO4",n:"phosphate",c:3,p:1,g:"Polyatomic"}
+  ];
+  var SUBS = "\u2080\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089", SUPS = "\u2070\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077\u2078\u2079";
+  function uSub(s) { return s.replace(/\d/g, function (d) { return SUBS.charAt(+d); }); }
+  function uSup(n, pos) { return (n > 1 ? String(n).replace(/\d/g, function (d) { return SUPS.charAt(+d); }) : "") + (pos ? "\u207A" : "\u207B"); }
+  function hSub(s) { return s.replace(/(\d+)/g, "<sub>$1</sub>"); }
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  function fill(sel, list, pos) {
+    var groups = {};
+    list.forEach(function (x, i) {
+      if (!groups[x.g]) { groups[x.g] = document.createElement("optgroup"); groups[x.g].label = x.g; sel.appendChild(groups[x.g]); }
+      var o = document.createElement("option"); o.value = i;
+      o.textContent = uSub(x.s) + uSup(x.c, pos) + " \u2013 " + x.n + (x.m ? " (" + ROMAN[x.c] + ")" : "");
+      groups[x.g].appendChild(o);
+    });
+  }
+  var bC = document.getElementById("bC"), bA = document.getElementById("bA");
+  fill(bC, CAT, true); fill(bA, ANI, false);
+  CAT.forEach(function (x, i) { if (x.s === "Fe" && x.c === 3) bC.value = i; });
+  ANI.forEach(function (x, i) { if (x.s === "SO4") bA.value = i; });
+  function part(x, n) {
+    var f = hSub(x.s);
+    if (x.p && n > 1) f = "(" + f + ")";
+    return f + (n > 1 ? "<sub>" + n + "</sub>" : "");
+  }
+  function chip(x, cls, pos) { return '<span class="chip ' + cls + '">' + hSub(x.s) + "<sup>" + (x.c > 1 ? x.c : "") + (pos ? "+" : "\u2212") + "</sup></span>"; }
+  function updateBuilder() {
+    var c = CAT[+bC.value], a = ANI[+bA.value];
+    var g = gcd(c.c, a.c), nC = a.c / g, nA = c.c / g, i, chips = "";
+    for (i = 0; i < nC; i++) chips += chip(c, "cat", true);
+    for (i = 0; i < nA; i++) chips += chip(a, "an", false);
+    document.getElementById("bChips").innerHTML = chips;
+    var name = c.n + (c.m ? "(" + ROMAN[c.c] + ")" : "") + " " + a.n;
+    var html = '<div class="big">' + part(c, nC) + part(a, nA) + " &nbsp;\u2192&nbsp; " + name + "</div>";
+    html += "<div>Charge check: " + nC + " \u00D7 (+" + c.c + ") = +" + (nC * c.c) + " and " + nA + " \u00D7 (\u2212" + a.c + ") = \u2212" + (nA * a.c) + ". Net charge is 0.</div>";
+    if (g > 1) html += "<div>The charges (" + c.c + "+ and " + a.c + "\u2212) share a factor of " + g + ", so the ratio is reduced to the lowest whole numbers.</div>";
+    html += "<div>" + (c.m ? "This metal can form more than one charge, so its name includes the charge as a Roman numeral." : (c.p ? "Ammonium is a polyatomic ion, so it keeps its name." : "This metal forms only one charge, so there is no Roman numeral.")) + "</div>";
+    document.getElementById("bResult").innerHTML = html;
+  }
+  bC.addEventListener("change", updateBuilder); bA.addEventListener("change", updateBuilder);
+  updateBuilder();
+ 
+  /* ---------- Self-check questions ---------- */
+  function normFormula(s) {
+    return s.replace(/[\u2080-\u2089]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x2080 + 48); })
+            .replace(/[\s_]/g, "").replace(/[\[\{]/g, "(").replace(/[\]\}]/g, ")");
+  }
+  function normName(s) { return normFormula(s).toLowerCase(); }
+ 
+  var Q = [
+    { type: "numtype", text: "Magnesium (1.31) bonds with oxygen (3.44). What is the electronegativity difference, and what type of bond is expected?",
+      ans: 2.13, bond: "Ionic",
+      work: "3.44 \u2212 1.31 = 2.13. That\u2019s greater than 1.7, and Mg is a metal while O is a nonmetal, so the bond is ionic." },
+    { type: "numtype", text: "Carbon (2.55) bonds with hydrogen (2.20). What is the electronegativity difference, and what type of bond is expected?",
+      ans: 0.35, bond: "Nonpolar covalent",
+      work: "2.55 \u2212 2.20 = 0.35. That\u2019s less than 0.4, so the bond is nonpolar covalent." },
+    { type: "charge", text: "Calcium is in Group 2. When it forms an ion, what is the charge of the calcium ion? (Type it like 3+ or 1\u2212.)",
+      rx: /^(ca)?(\+2|2\+)$/i,
+      hint: "Ask yourself: how many valence electrons does a Group 2 element have, and does it gain or lose them? Losing electrons makes the ion positive.",
+      work: "Calcium has 2 valence electrons. It loses both, so it has 2 more protons than electrons: a charge of 2+." },
+    { type: "free", text: "Solid sodium chloride does not conduct electricity, but sodium chloride dissolved in water does. Explain why.",
+      key: ["In the solid, the ions are held in fixed positions in the crystal lattice.",
+            "Dissolved in water, the ions are separated by water molecules and free to move.",
+            "Moving charged particles (ions) carry the electric current."] },
+    { type: "free", text: "MgO and NaCl are both ionic. Which would you predict has the stronger ionic bonds, and why?",
+      key: ["MgO: Mg\u00B2\u207A and O\u00B2\u207B have larger charges than Na\u207A and Cl\u207B.",
+            "Mg\u00B2\u207A and O\u00B2\u207B are smaller ions, so they can get closer together.",
+            "Larger charges and a shorter distance mean a stronger electrostatic attraction, so MgO has stronger bonds."] },
+    { type: "text", norm: "formula", label: "Formula", text: "Write the formula for aluminum sulfide.",
+      accept: /^Al2S3$/,
+      hints: [
+        { test: /^Al3S2$/, msg: "Check your crossing. Each ion\u2019s charge number becomes the <i>other</i> ion\u2019s subscript." },
+        { test: /^al2s3$/i, msg: "Right elements and subscripts. Check the capital and lowercase letters in the symbols." }
+      ],
+      generic: "Not yet. Find each ion\u2019s charge (Al is 3+, S is 2\u2212), then set the subscripts so the total charges cancel.",
+      work: "Al\u00B3\u207A and S\u00B2\u207B. Cross and drop: Al\u2082S\u2083. Check: 2 \u00D7 (+3) = +6 and 3 \u00D7 (\u22122) = \u22126." },
+    { type: "text", norm: "formula", label: "Formula", text: "Write the formula for calcium nitrate.",
+      accept: /^Ca\(NO3\)2$/,
+      hints: [
+        { test: /^ca\(?no3\)?\d*$/i, msg: "Check your subscripts and parentheses. How many nitrate ions does one Ca\u00B2\u207A need, and how do you show that nitrate is a group?" }
+      ],
+      generic: "Not yet. Calcium is 2+ and nitrate is 1\u2212. How many nitrate ions balance one calcium ion?",
+      work: "Ca\u00B2\u207A and NO\u2083\u207B. It takes two nitrate ions to balance one calcium, and more than one polyatomic ion needs parentheses: Ca(NO\u2083)\u2082." },
+    { type: "text", norm: "name", label: "Name", text: "Name the compound Fe\u2082O\u2083. (Include the Roman numeral.)",
+      accept: /^iron\(iii\)oxide$/,
+      hints: [
+        { test: /^ironoxide$/, msg: "Iron can have more than one charge, so the name needs a Roman numeral. Find the charge by balancing." },
+        { test: /^iron\((ii|iv|i)\)oxide$/, msg: "Check the charge. Three O\u00B2\u207B ions total 6\u2212, and two iron ions share that charge equally." }
+      ],
+      generic: "Not yet. Oxide is 2\u2212. Find the total negative charge, then split the matching positive charge between the iron ions.",
+      work: "3 \u00D7 (\u22122) = \u22126. Two Fe ions must total +6, so each is 3+. The name is iron(III) oxide." },
+    { type: "charge", text: "In MnO\u2082, what is the charge on the manganese ion? (Type it like 3+.)",
+      rx: /^(mn)?(\+4|4\+)$/i,
+      hint: "Don\u2019t just copy the subscript. Find the total charge of the oxide ions, then decide what one Mn ion must be to cancel it.",
+      work: "Two O\u00B2\u207B ions total 4\u2212, so one Mn ion must be 4+. The subscript 2 is the number of oxide ions, not the charge on manganese." },
+    { type: "free", text: "Why isn\u2019t \u201Ciron sulfate\u201D enough information to name a compound?",
+      key: ["Iron is multivalent, so it can form more than one ion (Fe\u00B2\u207A and Fe\u00B3\u207A).",
+            "Each ion combines with sulfate in a different ratio, giving different compounds: FeSO\u2084 and Fe\u2082(SO\u2084)\u2083.",
+            "A Roman numeral shows the iron\u2019s charge: iron(II) sulfate and iron(III) sulfate."] }
+  ];
+  var quiz = document.getElementById("quiz"), done = {}, tries = {};
+ 
+  function el(html) { var d = document.createElement("div"); d.innerHTML = html; return d.firstChild; }
+ 
+  Q.forEach(function (q, i) {
+    var box = el('<div class="q"></div>');
+    var h = '<div class="qtext">' + (i + 1) + '. ' + q.text + '</div>';
+    if (q.type === "numtype") {
+      h += '<div class="row"><div><label for="n' + i + '">Difference</label><input type="number" step="0.01" id="n' + i + '" style="width:110px"></div>' +
+           '<div><label for="t' + i + '">Bond type</label><select id="t' + i + '"><option value="">Choose\u2026</option><option>Nonpolar covalent</option><option>Polar covalent</option><option>Ionic</option></select></div>' +
+           '<button type="button" data-i="' + i + '">Check</button></div>';
+    } else if (q.type === "charge") {
+      h += '<div class="row"><div><label for="n' + i + '">Charge</label><input type="text" id="n' + i + '" style="width:110px" autocomplete="off"></div><button type="button" data-i="' + i + '">Check</button></div>';
+    } else if (q.type === "text") {
+      h += '<div class="row"><div><label for="n' + i + '">' + q.label + '</label><input type="text" id="n' + i + '" style="width:240px" autocomplete="off" autocapitalize="off" spellcheck="false"></div><button type="button" data-i="' + i + '">Check</button></div>';
+    } else {
+      h += '<label for="n' + i + '">Your answer (a couple of sentences)</label><textarea id="n' + i + '"></textarea>' +
+           '<div class="row" style="margin-top:8px"><button type="button" data-i="' + i + '">Compare with key ideas</button></div>';
+    }
+    h += '<div id="fb' + i + '" aria-live="polite"></div>';
+    box.innerHTML = h;
+    quiz.appendChild(box);
+  });
+  var score = el('<div class="score" id="score"></div>');
+  quiz.appendChild(score);
+ 
+  function feedback(i, cls, html) { document.getElementById("fb" + i).innerHTML = '<div class="fb ' + cls + '">' + html + '</div>'; }
+  function updateScore() {
+    var n = Object.keys(done).length;
+    score.textContent = n === 0 ? "" : n + " of " + Q.length + " questions finished.";
+  }
+  function wrong(i, q, msg) {
+    if (tries[i] >= 2) { msg += "<br><b>Worked solution:</b> " + q.work; done[i] = 1; }
+    feedback(i, "try", msg);
+  }
+ 
+  quiz.addEventListener("click", function (ev) {
+    var b = ev.target.closest("button[data-i]"); if (!b) return;
+    var i = +b.getAttribute("data-i"), q = Q[i];
+    tries[i] = (tries[i] || 0) + 1;
+    if (q.type === "numtype") {
+      var v = document.getElementById("n" + i).value, t = document.getElementById("t" + i).value;
+      if (v === "" || !t) { feedback(i, "try", "Enter a number and choose a bond type first."); tries[i]--; return; }
+      var numOK = Math.abs(parseFloat(v) - q.ans) <= 0.02, typeOK = t === q.bond;
+      if (numOK && typeOK) { feedback(i, "good", "Correct. " + q.work); done[i] = 1; }
+      else {
+        wrong(i, q, numOK ? "Your difference is right, but check the bond type against the ranges in the table." :
+                  (typeOK ? "Your bond type matches, but recheck the subtraction (bigger minus smaller)." : "Not yet. Recheck your subtraction, then compare it with the ranges in the table."));
+      }
+    } else if (q.type === "charge") {
+      var raw = document.getElementById("n" + i).value.replace(/\s/g, "");
+      if (!raw) { feedback(i, "try", "Type your answer first."); tries[i]--; return; }
+      if (q.rx.test(raw)) { feedback(i, "good", "Correct. " + q.work); done[i] = 1; }
+      else wrong(i, q, "Not yet. " + q.hint);
+    } else if (q.type === "text") {
+      var r2 = document.getElementById("n" + i).value.trim();
+      if (!r2) { feedback(i, "try", "Type your answer first."); tries[i]--; return; }
+      var n = q.norm === "name" ? normName(r2) : normFormula(r2);
+      if (q.accept.test(n)) { feedback(i, "good", "Correct. " + q.work); done[i] = 1; }
+      else {
+        var msg = q.generic, k;
+        for (k = 0; k < q.hints.length; k++) { if (q.hints[k].test.test(n)) { msg = q.hints[k].msg; break; } }
+        wrong(i, q, msg);
+      }
+    } else {
+      var a = document.getElementById("n" + i).value.trim();
+      if (a.length < 25) { feedback(i, "try", "Write a fuller explanation first (at least a sentence or two), then compare."); tries[i]--; return; }
+      var list = q.key.map(function (k) { return "<li>" + k + "</li>"; }).join("");
+      feedback(i, "info", "<b>Did your answer include these ideas?</b><ul>" + list + "</ul>If you missed one, add it to your answer now.");
+      done[i] = 1;
+    }
+    updateScore();
+  });
+})();
+</script>
+</body>
+</html>
